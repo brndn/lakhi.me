@@ -2,687 +2,96 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
-    <style>
-
-        /*These styles contain basic styles for fomatting along with our animation css*/
-
-        body {
-            font-size: 16px;
-            font-family: "Helvetica Neue Light", "HelveticaNeue-Light", "Helvetica Neue", Calibri, Helvetica, Arial, sans-serif;
-        }
-        
-
-
-        body {
-            color: #FFFFFF;
-            font-size: 13px;
-            text-align: center;
-            background-color: #000000;
-            margin: 0px;
-
-        }
-
-        html, body {
-            height: 100%;
-        }
-        body {
-            /*display: flex;*/
-            /*align-items: stretch;*/
-            /*flex-direction: column;*/
-            width: 100%;
-            height: 100%;
-            overflow: hidden;
-            position: relative;
-        }
-
-        .container{
-            width: 100%;
-            height: 100%;
-  
-        }
-
-        #home-gl{
-            -webkit-mask-image: url('resources/images/3dFace2.png');
-            -o-mask-image: url('resources/images/3dFace2.png');
-            -moz-mask-image: url('resources/images/3dFace2.png');
-            mask-image: url('resources/images/3dFace2.png');
-
-            /*mask-repeat: no-repeat;*/
-            /*-webkit-mask-repeat: no-repeat;*/
-
-            /*mask-position: center center;*/
-            /**/
-            /*    //todo
-            https://github.com/codepo8/canvas-masking/blob/master/canvasmask.js likely needs to be used for canvas masking support....
-            */
-            /*-webkit-mask-position: center center;*/
-            /*-moz-mask-mask-position: center center;*/
-
-
-            -webkit-mask-position: center center;
-            mask-position: center center;
-            -webkit-mask-repeat: no-repeat;
-            mask-repeat: no-repeat;
-            
-
-            font-weight: bold;
-            font-weight: 400;
-            line-height: 170%;
-
-        }
-
-
-        #portfolio{
-            
-            justify-content: center;
-
-
-            height: 100%;
-            flex-basis: 80px;
-
-        }
-        #portfolio section{
-
-     
-
-        }
-
-        .flex-box{
-            -webkit-box-flex: 1;      /* OLD - iOS 6-, Safari 3.1-6 */
-            -moz-box-flex: 1;         /* OLD - Firefox 19- */
-            -webkit-flex: 1;          /* Chrome */
-            -ms-flex: 1;              /* IE 10 */
-            flex: 1;                  /* NEW, Spec - Opera 12.1, Firefox 20+ */
-            display: -webkit-box;      /* OLD - iOS 6-, Safari 3.1-6 */
-            display: -moz-box;         /* OLD - Firefox 19- (buggy but mostly works) */
-            display: -ms-flexbox;      /* TWEENER - IE 10 */
-            display: -webkit-flex;     /* NEW - Chrome */
-            display: flex;             /* NEW, Spec - Opera 12.1, Firefox 20+ */
-
-        }
-
-
-        .menu{
-            position: absolute;
-            justify-content: center;
-            width: 100%;
-            height: 100%;
-            align-self: flex-start;
-
-        }
-        
-        .menu h2{
-            width: 100%;
-            height: 100%;
-            color: #ffda81;
-            letter-spacing: 5px;
-            font-size: 18px;
-        }
-
-    </style>
-
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nadia Lakhi Creative </title>
     <script src="https://code.jquery.com/jquery-2.2.0.min.js" type="text/javascript"></script>
 
 
-
-    <link rel="stylesheet" type="text/css" href="./slick/slick.css">
-    <link rel="stylesheet" type="text/css" href="./slick/slick-theme.css">
-    <style type="text/css">
-        
-        .slider {
-            width: 80%;
-            margin: 20% 100px;
-        }
-
-        .slick-slide {
-            margin: 0px 20px;
-        }
-
-        .slick-slide img {
-            width: 100%;
-        }
-
-        #videoContainer{
-         position: absolute;
-            padding-top: 20%;
-            width: 100%;
-            height: 100%;
-            /* default fallback */
-            background: rgb(0, 0, 0) transparent;
-            /* nice browsers */
-            background: rgba(0, 0, 0, 0.7);
-            display: none;
-        }
-
-        .tile div{
-            opacity: 0;
-       
-            top: 0;
-            position: relative;
-            top: -300px;
-            max-width: 100%;
-            max-height: 100%;
-
-        }
-        .tile div p{
-            background-color: #9d9d9d;
-            text-align: left;
-            max-width: 100%;
-            max-height: 100%;
-
-            word-wrap: break-word;
-            /*padding-left: 50px; !* The padding is just there to move the h1 element to the center of the div *!*/
-            /*padding-top: 17px;*/
-            font-family: Rockwell, Georgia, "Times New Roman", Times, serif;
-            font-size: 30px;
-            color: #91c8c8;
-            text-shadow: rgba(0,0,0,0.5) -1px 0, rgba(0,0,0,0.3) 0 -1px, rgba(255,255,255,0.5) 0 1px, rgba(0,0,0,0.3) -1px -2px;
-
-        }
-        .tile:hover div{
-            opacity: 100;
-        }
-        .tile:hover img{ border: white solid 1px }
-        
-        .tile .icon-video{
-            width: 100px;
-            height: 100px;
-            position: absolute;
-            display: block;
-            background-image: none;
-        }
-        .tile:hover .icon-video{
-            background-image: url('resources/images/Icons/PlayIcon.png');
-            background-position: top left;
-            background-repeat: no-repeat;
-        }
-
-        .back-icon{
-            align-self: flex-start;
-        }
+    <link rel="stylesheet" href="Magnific-Popup/dist/magnific-popup.css" />
+    <link rel="stylesheet" href="css/default.css" />
+    <link rel="stylesheet" href="css/gallery.css" />
 
 
+    <script src="Magnific-Popup/dist/jquery.magnific-popup.js"></script>
+
+    <script src="js/libs/dat.gui.min.js"></script>
+    <script src="build/three.js"></script>
+    <script src="js/Detector.js"></script>
+    <script src="js/libs/stats.min.js"></script>
+
+    <script src="js/controls/TrackballControls.js"></script>
+
+    <script src="js/GPUParticleSystem.js" charset="utf-8"></script>
 
 
-
-        @media screen and (min-width: 320px) and (max-width: 767px) and (orientation: landscape) {
-            html {
-                transform: rotate(-90deg);
-                transform-origin: left top;
-                width: 100vh;
-                overflow-x: hidden;
-                position: absolute;
-                top: 100%;
-                left: 0;
-            }
-        }
-        
-    </style>
-
-    
 </head>
 <body>
 
+<view id="home">
+    <row>
+    <div id="home-gl"></div>
 
+    <div class="down-button home-button">
+        <button  onclick="navigationPages.PORTFOLIO.show()">ENTER</button>
+    </div>
+    </row>
+</view>
 
-
-
-
-<div id="info">
-    <div id="notSupported" style="display:none">Sorry your graphics card + browser does not support hardware instancing</div>
-</div>
-
-<script src="js/libs/dat.gui.min.js"></script>
-<script src="build/three.js"></script>
-<script src="js/Detector.js"></script>
-<script src="js/libs/stats.min.js"></script>
-
-<script src="js/controls/TrackballControls.js"></script>
-
-<script src="js/GPUParticleSystem.js" charset="utf-8"></script>
-
-
-
-    <div id="home" class="container flex-box">
-        <div id="home-gl" class="container flex-box"></div>
-        <div class="flex-box menu">
-            <h2 onclick="navigationPages.PORTFOLIO.show()">ENTER</h2>
-        </div>
+<view id="portfolio">
+    <row>
+    <div class="up-button">
+        <button onclick="navigationPages.HOME.show()" />
     </div>
 
+    <column>
+        <div class="left-nav"></div>
 
+        <div class="gallery-shell">
 
-    <div class="container flex-box" id="portfolio">
-        <div class="menu flex-box">
-            <img src="resources/images/Icons/back-up.png" class="back-icon" onclick="navigationPages.HOME.show()" />
-
-            <script src="https://player.vimeo.com/api/player.js"></script>
-            <script>
-                var player;
-                function playVideo(id) {
-                    var options = {
-                        id: id,
-                        width: 720,
-                        loop: true
-                    };
-
-                    if(!player){
-                       player = new Vimeo.Player('videoContainer', options);
-                        player.play();
-                        var contents = $('#videoContainer');
-                        contents.css("display", "block");
-                   } else {
-                        player.loadVideo(id).then(function(id) {
-                            var contents = $('#videoContainer');
-                            contents.css("display", "block");
-                            player.play();
-                        })
-
-                    }
-
-                }
-
-                function closePlayer(){
-                    if(player){
-                        player.unload();
-                        var contents = $('#videoContainer');
-                        contents.css("display", "none");
-                    }
-
-                }
-
-            </script>
-
+            <gallery></gallery>
         </div>
-            <section class="regular slider">
+        <div class="right-nav"></div>
+    </column>
+        <!--<div class="down-button">-->
+            <!--<button  onclick="navigationPages.CONTACT.show()" />-->
+        <!--</div>-->
+    </row>
+</view>
 
-                <div class="tile">
-                    <img src="resources/images/portfolio-thumbnails/ScreenshotGameVid.jpg" onclick="playVideo(209011356)" />
-                    <div class="icon-video"></div>
-                    <div><p><b>Project:</b> Game Design/Production/Creation
-                        Tools: Unity, Maya</p></div>
-                </div>
-
-
-                <div class="tile">
-                    <img src="resources/images/portfolio-thumbnails/ScreenshotCowboyModel.jpg" onclick="playVideo(209011356)" />
-                    <div><p><b>Project 2:</b> .........</p></div>
-                </div>
-
-                <div class="tile">
-                    <img src="resources/images/portfolio-thumbnails/ScreenshotCowboyVid.jpg" onclick="playVideo(209011356)" />
-                    <div><p><b>Project 3:</b> Design for something.</p></div>
-                </div>
-
-               <div class="tile">
-                    <img src="resources/images/portfolio-thumbnails/ScreenshotDiablo.jpg" onclick="playVideo(209011356)" />
-                    <span><b>Project:</b> Game Design/Production/Creation
-                        Tools: Unity, Maya</span>
-                </div>
-
-
-               <div class="tile">
-                    <img src="resources/images/portfolio-thumbnails/ScreenshotClothLadyPainting.jpg" onclick="playVideo(209011356)" />
-
-                    <span><b>Project:</b> Game Design/Production/Creation
-                        Tools: Unity, Maya</span>
-                </div>
-
-
-
-
-
-
-            </section>
-
-            <div id="videoContainer">
-                <img src="resources/images/Icons/close-button.png" class="back-icon" onclick="closePlayer()" />
-            </div>
-
+<view class="window-container" id="contact">
+    <div class="up-button">
+        <button onclick="navigationPages.PORTFOLIO.show()" />
     </div>
+    <div class="center-inner">
+    <section class="contact_form_section">
+    </section>
+    </div>
+</view>
 
-
-<script id="vertex_shader" type="x-shader/x-vertex">
-
-varying vec2 vUv;
-
-void main() {
-
-    vUv = uv;
-
-    gl_Position = projectionMatrix * modelViewMatrix * vec4( position, 1.0 );
-
-}
-
-</script>
-
-<script id="fragment_shader" type="x-shader/x-fragment">
-
-uniform vec3 color;
-uniform sampler2D texture;
-
-varying vec2 vUv;
-
-void main() {
-
-    vec4 tColor = texture2D( texture, vec2(vUv.x, 1.0 - vUv.y) );
-
-    gl_FragColor = tColor.bgra;
-
-}
-
-</script>
 
 <script>
-
-    var portfilio = [
-        { image: 'ScreenshotGameVid.jpg'},
-        { image: 'ScreenshotCowboyModel.jpg'},
-        { image: 'ScreenshotCowboyVid.jpg'},
-        { image: 'ScreenshotDiablo.jpg'},
-        { image: 'ScreenshotClothLadyPainting.jpg'},
-        { image: 'ScreenshotLowPolyTree.jpg'},
-        { image: 'ScreenshotLowPolySuit.jpg'},
-        { image: 'ScreenshotEnvironmentDigital.jpg'},
-        { image: 'ScreenshotRigging.jpg'},
-        { image: 'ScreenshotPortraitDrawing.jpg'},
-        { image: 'ScreenshotDrawingColouredDigital.jpg'},
-        { image: 'ScreenshotdigitalProductionDesign.jpg'},
-        { image: 'ScreenshotAboutme.jpg'},
-        { image: 'ScreenshotCV.jpg'},
-        { image: 'ScreenshotHeadPhoneVideo.jpg'},
-        { image: 'ScreenshotDigital.jpg'},
-        { image: 'ScreenshotBiographyDigital.jpg'},
-        { image: 'ScreenshotIslandVid.jpg'},
-        { image: 'ScreenshotBobDigital.jpg'},
-        { image: 'ScreenshotNakedLadyPainting.jpg'},
-        { image: 'ScreenshotLadyinwhitePainting.jpg'},
-        { image: 'ScreenshotLowPolyGirlVid.jpg'},
-        { image: 'ScreenshotLogo.jpg'},
-        { image: 'ScreenshotMaleAnatomyPencil.jpg'},
-        { image: 'ScreenshotEnvironmentDigital.jpg'},
-        { image: 'ScreenshotFemaleAnatomyPencil.jpg'},
-
-    ]
-
-    
-    var camera, tick = 0,
-
-        scene, renderer, clock = new THREE.Clock(true),
-        controls, container,
-        options, spawnerOptions, particleSystem;
-
-    function initPage1(){
-        init();
-        animate()
-    }
-
-    function init() {
-
-        if((/android|webos|iphone|ipad|ipod|blackberry|iemobile|opera mini/i.test(navigator.userAgent.toLowerCase()))){
-            return;
-
-        }
-
-        container = document.getElementById( 'home-gl' );
-
-
-        camera = new THREE.PerspectiveCamera(28, window.innerWidth / window.innerHeight, 1, 10000);
-        camera.position.z = 200;
-
-        scene = new THREE.Scene();
-
-
-        // The GPU Particle system extends THREE.Object3D, and so you can use it
-        // as you would any other scene graph component.	Particle positions will be
-        // relative to the position of the particle system, but you will probably only need one
-        // system for your whole scene
-        particleSystem = new THREE.GPUParticleSystem({
-            maxParticles: 250000
-        });
-
-
-
-        // options passed during each spawned
-        options = {
-            position: new THREE.Vector3(0.1,4,12),
-            positionRandomness: 2.18,
-            velocity: new THREE.Vector3(1,4,6),
-            velocityRandomness: 2.8,
-            color: 0xFFAA62,
-            colorRandomness: 0.1,
-            turbulence: 0.8,
-            lifetime: 15,
-            size: 3.5,
-            sizeRandomness: 12.7
-        };
-
-        spawnerOptions = {
-            spawnRate: 30000,
-            horizontalSpeed: 1.5,
-            verticalSpeed: 2.18,
-            timeScale: 0.4
-        }
-
-        //        gui.add(options, "velocityRandomness", 0, 3);
-        //        gui.add(options, "positionRandomness", 0, 3);
-        //        gui.add(options, "size", 1, 20);
-        //        gui.add(options, "sizeRandomness", 0, 25);
-        //        gui.add(options, "colorRandomness", 0, 1);
-        //        gui.add(options, "lifetime", .1, 10);
-        //        gui.add(options, "turbulence", 0, 1);
-        //
-        //        gui.add(spawnerOptions, "spawnRate", 10, 30000);
-        //        gui.add(spawnerOptions, "timeScale", -1, 1);
-
-
-        renderer = new THREE.WebGLRenderer();
-
-        renderer.setPixelRatio(window.devicePixelRatio);
-        //renderer.setClearColor( 0xffffff );
-        renderer.setSize(window.innerWidth, window.innerHeight);
-
-
-        container.appendChild(renderer.domElement);
-
-
-
-
-        /// MASKING BITS>>>
-
-        
-        // cube geometry
-        var geometry = new THREE.BoxGeometry( 70, 70, 70 );
-
-        // texture
-        var texture = new THREE.Texture( generateTexture( ) ); // texture background is transparent
-        texture.needsUpdate = true; // important
-        //var texture = THREE.ImageUtils.loadTexture("snowflake7_alpha.png");
-
-        // uniforms
-        var uniforms = {
-            color: { type: "c", value: new THREE.Color( 0xff0000 ) }, // material is "red"
-            texture: { type: "t", value: texture },
-        };
-
-        // attributes
-        var attributes = {
-        };
-
-        // material
-        var material = new THREE.ShaderMaterial({
-            attributes      : attributes,
-            uniforms        : uniforms,
-            vertexShader    : document.getElementById( 'vertex_shader' ).textContent,
-            fragmentShader  : document.getElementById( 'fragment_shader' ).textContent
-        });
-
-        // material
-        /*var material = new THREE.MeshBasicMaterial( {
-         color: 0xff0000,
-         map: texture
-         } );*/
-
-        // cube
-        mesh = new THREE.Mesh( geometry, material );
-        scene.add( mesh );
-
-        scene.add( particleSystem);
-        
-        function generateTexture( ) {
-
-            // create canvas
-            var canvas = renderer.domElement;
-            canvas.width = renderer.domElement.width;
-            canvas.height = renderer.domElement.height;
-
-            // get context
-            var context = canvas.getContext( '2d' );
-
-
-
-
-            var mask = document.createElement('img');
-            mask.src = 'resources/images/3dFace2.png';
-
-            mask.onload = function() {
-                context.width  = renderer.domElement.width;
-                context.height = renderer.domElement.height;
-
-                context.globalCompositeOperation='destination-in';
-
-                context.drawImage(mask, 10, 10, width, height);
-           
-
-
-                //img.src = imagecanvas.toDataURL();
-            }
-
-
-
-
-
-            return canvas;
-
-        }
-
-
-        // setup controls
-        /**
-         *
-         * @type {THREE.TrackballControls}
-         */
-        controls = new THREE.TrackballControls(camera, renderer.domElement);
-        controls.rotateSpeed = 5.0;
-        controls.zoomSpeed = 2.2;
-        controls.panSpeed = 1;
-        controls.dynamicDampingFactor = 0.3;
-
-        window.addEventListener('resize', onWindowResize, false);
-
-    }
-
-    function onWindowResize() {
-
-        camera.aspect = window.innerWidth / window.innerHeight;
-        camera.updateProjectionMatrix();
-
-        renderer.setSize(window.innerWidth, window.innerHeight);
-
-    }
-
-
-    function animate() {
-
-        if((/android|webos|iphone|ipad|ipod|blackberry|iemobile|opera mini/i.test(navigator.userAgent.toLowerCase()))){
-            return;
-
-        }
-
-        requestAnimationFrame(animate);
-
-        controls.update();
-
-
-
-        var delta = clock.getDelta() * spawnerOptions.timeScale;
-        tick += delta;
-
-        if (tick < 0) tick = 0;
-
-        if (delta > 0) {
-            options.position.x = Math.sin(tick * spawnerOptions.horizontalSpeed) * 20;
-            ///  options.position.y = Math.sin(tick * spawnerOptions.verticalSpeed) * 10;
-            options.position.y = 0
-            options.position.z = Math.sin(tick * spawnerOptions.horizontalSpeed + spawnerOptions.verticalSpeed) * 5;
-
-            for (var x = 0; x < spawnerOptions.spawnRate * delta; x++) {
-                // Yep, that's really it.	Spawning particles is super cheap, and once you spawn them, the rest of
-                // their lifecycle is handled entirely on the GPU, driven by a time uniform updated below
-                particleSystem.spawnParticle(options);
-            }
-        }
-
-        particleSystem.update(tick);
-
-
-        /// RENDER******
-        renderer.render(scene, camera);
-
-
-    }
-
-    function reInitPage1(){
-
-        if((/android|webos|iphone|ipad|ipod|blackberry|iemobile|opera mini/i.test(navigator.userAgent.toLowerCase()))){
-            return;
-
-        }
-        
-            scene.add(particleSystem);
-            animate();
-    }
-
-
-    function removeParticles(){
-
-        if((/android|webos|iphone|ipad|ipod|blackberry|iemobile|opera mini/i.test(navigator.userAgent.toLowerCase()))){
-            return;
-
-        }
-            scene.remove(particleSystem);
-            animate();
-
-            renderer.dispose();
-            cancelAnimationFrame(animate)
-            //        removeEntity(particleSystem);
-            //        scene.dispose();
-
-    }
-
-
-
-    ////////////////////
-    //// NAVIGATION CODE
-    ////////////////////
-
-
-
+    $(function() {
+        navigationPages.HOME.show();
+    });
     var currentView;
 
     var navigationPages = {
         'HOME': {
             id : 'HOME',
+            target:$('#home'),
             show: function(e){
+                $('body').addClass('home');
                 if(this.initialised){
                     reInitPage1();
                 }else {
                     this.initialised = true;
                     initPage1();
                 }
-                $('html, body').animate({scrollTop: $("#home").offset().top}, 1000);
+                if(currentView){
+                    currentView.hide();
+                }
                 currentView = this;
+                $('html, body').animate({scrollTop: currentView.target.offset().top}, 1000);
             },
             hide: function(){
                 removeParticles();
@@ -690,53 +99,48 @@ void main() {
         },
         'PORTFOLIO': {
             id : 'PORTFOLIO',
+            target:$('#portfolio'),
+            show: function(e){
+                $('body').addClass('portfolio');
+                navigationPages.HOME.hide();
+                currentView.hide();
+                currentView = this;
+                $('html, body').animate({scrollTop: currentView.target.offset().top}, 1000);
+            },
+            hide: function(){}
+        },
+        'CONTACT': {
+            id : 'CONTACT',
+            target: $('#contact'),
             show: function(e){
                 navigationPages.HOME.hide();
                 currentView.hide();
-                var contents = $('#portfolio');
-                $('html, body').animate({scrollTop: $("#portfolio").offset().top}, 1000);
                 currentView = this;
+                $('html, body').animate({scrollTop: currentView.target.offset().top}, 1000);
+            },
+            hide: function(){}
+        },
+        'EXTRA': {
+            id : 'EXTRA',
+            target: $('#extra'),
+            show: function(e){
+                navigationPages.HOME.hide();
+                currentView.hide();
+                currentView = this;
+                $('html, body').animate({scrollTop: currentView.target.offset().top}, 1000);
+
             },
             hide: function(){}
         },
     };
 
-    navigationPages.HOME.show();
+   function onWindowResize2(){
+            $('html, body').animate({scrollTop: currentView.target.offset().top}, 0);
+    }
 
-
+    window.addEventListener('resize', onWindowResize2, false);
 </script>
-
-
-
-
-
-<script src="./slick/slick.js" type="text/javascript" charset="utf-8"></script>
-<script type="text/javascript">
-    $(document).on('ready', function() {
-        $(".regular").slick({
-            dots: true,
-            infinite: true,
-            slidesToShow: 3,
-            slidesToScroll: 3
-        });
-        $(".center").slick({
-            dots: true,
-            infinite: true,
-            centerMode: true,
-            slidesToShow: 3,
-            slidesToScroll: 3
-        });
-        $(".variable").slick({
-            dots: true,
-            infinite: true,
-            variableWidth: true
-        });
-        $(".lazy").slick({
-            lazyLoad: 'ondemand', // ondemand progressive anticipated
-            infinite: true
-        });
-    });
-</script>
-
+<script src="views/view1.js" type="text/javascript" charset="utf-8"></script>
+<script src="views/view2.js" type="text/javascript" charset="utf-8"></script>
 </body>
 </html>

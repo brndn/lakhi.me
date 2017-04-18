@@ -1,0 +1,296 @@
+body {
+    font-size: 16px;
+    font-family: "Helvetica Neue Light", "HelveticaNeue-Light", "Helvetica Neue", Calibri, Helvetica, Arial, sans-serif;
+    color: #FFFFFF;
+    font-size: 13px;
+    text-align: center;
+    background-color: #000000;
+    margin: 0px;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    position: relative;
+
+}
+
+html {
+    height: 100%;
+}
+
+a{
+    text-decoration: none;
+    text-decoration: none;
+    border: 0;
+}
+
+
+*|*:link, a:active,a::selection, a:link,a:-webkit-any-link{
+    color: transparent;
+    text-decoration: none;
+    outline: none;
+    border: none;
+}
+
+view{
+    position: relative;
+    width: 100%;
+    min-width: 100%;
+    height:auto;
+    max-height: 100vh;
+    min-height: 320px;
+
+    -webkit-box-flex: 1;      /* OLD - iOS 6-, Safari 3.1-6 */
+    -moz-box-flex: 1;         /* OLD - Firefox 19- */
+    -webkit-flex: 1;          /* Chrome */
+    -ms-flex: 1;              /* IE 10 */
+    flex: 1;                  /* NEW, Spec - Opera 12.1, Firefox 20+ */
+    display: -webkit-box;      /* OLD - iOS 6-, Safari 3.1-6 */
+    display: -moz-box;         /* OLD - Firefox 19- (buggy but mostly works) */
+    display: -ms-flexbox;      /* TWEENER - IE 10 */
+    display: -webkit-flex;     /* NEW - Chrome */
+    display: flex;             /* NEW, Spec - Opera 12.1, Firefox 20+ */
+
+
+    flex-wrap: wrap;
+
+
+    align-items: center;
+    flex-direction: column;     /* make main axis horizontal (default setting) */
+    justify-content: center; /* center items horizontally, in this case */
+
+    overflow: hidden;
+}
+
+
+row {
+    -webkit-box-flex: 1;      /* OLD - iOS 6-, Safari 3.1-6 */
+    -moz-box-flex: 1;         /* OLD - Firefox 19- */
+    -webkit-flex: 1;          /* Chrome */
+    -ms-flex: 1;              /* IE 10 */
+    flex: 1;                  /* NEW, Spec - Opera 12.1, Firefox 20+ */
+    display: -webkit-box;      /* OLD - iOS 6-, Safari 3.1-6 */
+    display: -moz-box;         /* OLD - Firefox 19- (buggy but mostly works) */
+    display: -ms-flexbox;      /* TWEENER - IE 10 */
+    display: -webkit-flex;     /* NEW - Chrome */
+    display: flex;             /* NEW, Spec - Opera 12.1, Firefox 20+ */
+
+
+    /*flex-wrap: wrap;*/
+
+    align-items: center;
+
+    flex-direction: column;     /* make main axis horizontal (default setting) */
+    justify-content: center; /* center items horizontally, in this case */
+
+}
+
+
+
+
+
+#home-gl{
+    flex: 1;
+    flex-direction: inherit;
+    align-self: stretch;
+
+    min-width: 540px;
+    max-width: 960px;
+
+    max-height: 720px;
+    min-height: 200px;
+}
+
+
+column{
+    -webkit-box-flex: 1;      /* OLD - iOS 6-, Safari 3.1-6 */
+    -moz-box-flex: 1;         /* OLD - Firefox 19- */
+    -webkit-flex: 1;          /* Chrome */
+    -ms-flex: 1;              /* IE 10 */
+    flex: 1;                  /* NEW, Spec - Opera 12.1, Firefox 20+ */
+    display: -webkit-box;      /* OLD - iOS 6-, Safari 3.1-6 */
+    display: -moz-box;         /* OLD - Firefox 19- (buggy but mostly works) */
+    display: -ms-flexbox;      /* TWEENER - IE 10 */
+    display: -webkit-flex;     /* NEW - Chrome */
+    display: flex;             /* NEW, Spec - Opera 12.1, Firefox 20+ */
+
+    /*flex-wrap: wrap;*/
+    align-items: center;
+
+    flex-direction: row;      /*make main axis horizontal (default setting) */
+
+    -webkit-justify-content: space-around; / Safari 6.1+ */
+    justify-content: space-around;
+
+    max-width: 1024px;
+    width: 1024px;
+    min-width: 1024px;
+
+    min-height: 720px;
+    max-height: 720px;
+    height: 720px;
+    position: relative;
+
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    
+}
+
+
+
+#home-gl.no-gl {
+    background-image: url('../resources/images/fallback-home-page.jpg');
+    background-position: top center;
+    background-repeat: no-repeat;
+     background-size: auto 100%;
+
+}
+
+
+#home-gl.with-gl{
+    -webkit-mask-image: url('../resources/images/3dFace2.png');
+    -o-mask-image: url('../resources/images/3dFace2.png');
+    -moz-mask-image: url('../resources/images/3dFace2.png');
+    mask-image: url('../resources/images/3dFace2.png');
+
+    /*mask-repeat: no-repeat;*/
+    /*-webkit-mask-repeat: no-repeat;*/
+
+    /*mask-position: center center;*/
+    /**/
+    /*    //todo
+    https://github.com/codepo8/canvas-masking/blob/master/canvasmask.js likely needs to be used for canvas masking support....
+    */
+    /*-webkit-mask-position: center center;*/
+    /*-moz-mask-mask-position: center center;*/
+
+
+    -webkit-mask-position: center center;
+    mask-position: center center;
+    -webkit-mask-repeat: no-repeat;
+    mask-repeat: no-repeat;
+
+}
+
+
+.up-button button,
+.down-button button{
+    min-width: 100%;
+    min-height: 90px;
+    margin      : 0;
+    padding     : 0;
+    border      : 0;
+    background  : transparent;
+    font-family : inherit;
+    font-size   : 1em;
+    cursor      : pointer;
+}
+
+button:active {
+    outline: 0; !important;
+    border: none;
+}
+
+button:focus {outline:0 !important; border: none;}
+
+button::-moz-focus-inner{
+    padding : 0;
+    border  : 0;
+}
+
+.up-button button{
+    background  : url('../resources/images/Icons/back-up.png') no-repeat center center;
+    background-size: 40px 40px;
+}
+
+
+.down-button button{
+    background  : url('../resources/images/Icons/back-up.png') no-repeat center center;
+    -moz-transform: rotate(180deg);
+
+    -o-transform: rotate(180deg);
+
+    -webkit-transform: rotate(180deg);
+
+    -ms-transform: rotate(180deg);
+    background-size: 40px 40px;
+
+}
+
+.down-button{
+    z-index:999;
+    min-width: 100%;
+}
+
+
+.down-button.home-button button{
+    background:transparent;
+    color: #ffbb68;
+    font-weight: bold;
+    font-size: 40px;
+    height: 50px;
+    -moz-transform: rotate(0deg);
+
+    -o-transform: rotate(0deg);
+
+    -webkit-transform: rotate(0deg);
+
+    -ms-transform: rotate(0deg);
+}
+
+.up-button{
+    z-index:999;
+    min-width: 100%;
+}
+
+
+
+/*todo colour everything*/
+
+/*view:nth-child(even) {background: #2a2a2a*/
+/*}*/
+/*view:nth-child(odd) {background: #000000*/
+/*}*/
+
+
+
+/*row{*/
+    /*background-color: rgba(122,146,225,0.3);*/
+/*}*/
+/*column{*/
+    /*background-color: rgba(225, 55, 33, 0.3);*/
+/*}*/
+
+
+
+/*todo end-olour everything*/
+
+
+
+/*@-webkit-keyframes body-colour {*/
+    /*0%   { background-color: #000000; }*/
+    /*100% {  background-color: #c8ffea; }*/
+/*}*/
+/*@-moz-keyframes  body-colour {*/
+    /*0%   {  background-color: #000000; }*/
+    /*100% {  background-color: #c8ffea; }*/
+/*}*/
+/*@-o-keyframes  body-colour {*/
+    /*0%   {  background-color: #000000; }*/
+    /*100% {  background-color: #c8ffea; }*/
+/*}*/
+/*@keyframes  body-colour {*/
+    /*0%   {  background-color: #000000; }*/
+    /*100% {  background-color: #c8ffea; }*/
+/*}*/
+
+/*body.home{*/
+
+/*}*/
+
+/*body.portfolio{*/
+    /*-webkit-animation:  body-colour 2.4s 1;*/
+    /*-moz-animation:     body-colour 2.4s 1;*/
+    /*-o-animation:       body-colour 2.4s 1;*/
+    /*animation:          body-colour 2.4s 1;*/
+/*}*/
