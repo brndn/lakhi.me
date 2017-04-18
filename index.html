@@ -14,7 +14,7 @@
 
     <script src="Magnific-Popup/dist/jquery.magnific-popup.js"></script>
 
-    <script src="js/libs/dat.gui.min.js"></script>
+    <!--<script src="js/libs/dat.gui.min.js"></script>-->
     <script src="build/three.js"></script>
     <script src="js/Detector.js"></script>
     <script src="js/libs/stats.min.js"></script>
@@ -26,7 +26,8 @@
 
 </head>
 <body>
-
+<div id="main-container">
+    <row>
 <view id="home">
     <row>
     <div id="home-gl"></div>
@@ -67,7 +68,7 @@
     </section>
     </div>
 </view>
-
+    </row>
 
 <script>
     $(function() {
@@ -80,6 +81,7 @@
             id : 'HOME',
             target:$('#home'),
             show: function(e){
+                $("body").removeClass();
                 $('body').addClass('home');
                 if(this.initialised){
                     reInitPage1();
@@ -101,6 +103,7 @@
             id : 'PORTFOLIO',
             target:$('#portfolio'),
             show: function(e){
+                $("body").removeClass();
                 $('body').addClass('portfolio');
                 navigationPages.HOME.hide();
                 currentView.hide();
@@ -142,5 +145,6 @@
 </script>
 <script src="views/view1.js" type="text/javascript" charset="utf-8"></script>
 <script src="views/view2.js" type="text/javascript" charset="utf-8"></script>
+</div>
 </body>
 </html>

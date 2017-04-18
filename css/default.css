@@ -35,7 +35,7 @@ view{
     position: relative;
     width: 100%;
     min-width: 100%;
-    height:auto;
+    height:100%;
     max-height: 100vh;
     min-height: 320px;
 
@@ -51,14 +51,12 @@ view{
     display: flex;             /* NEW, Spec - Opera 12.1, Firefox 20+ */
 
 
-    flex-wrap: wrap;
-
-
+    /*flex-wrap: wrap;*/
+    
     align-items: center;
     flex-direction: column;     /* make main axis horizontal (default setting) */
     justify-content: center; /* center items horizontally, in this case */
-
-    overflow: hidden;
+    
 }
 
 
@@ -85,6 +83,16 @@ row {
 }
 
 
+div#main-container{
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    width: 100%;
+    height:100%;
+}
+
 
 
 
@@ -97,7 +105,12 @@ row {
     max-width: 960px;
 
     max-height: 720px;
-    min-height: 200px;
+    min-height: 180px;
+
+}
+
+.no-pointers{
+    pointer-events: none;
 }
 
 
@@ -140,7 +153,7 @@ column{
 
 #home-gl.no-gl {
     background-image: url('../resources/images/fallback-home-page.jpg');
-    background-position: top center;
+    background-position: center center;
     background-repeat: no-repeat;
      background-size: auto 100%;
 
@@ -294,3 +307,30 @@ button::-moz-focus-inner{
     /*-o-animation:       body-colour 2.4s 1;*/
     /*animation:          body-colour 2.4s 1;*/
 /*}*/
+
+#portfolio,#home{
+    -webkit-transition: opacity 1.2s ease-in-out;
+    -moz-transition: opacity 1.2s ease-in-out;
+    -o-transition: opacity 1.2s ease-in-out;
+    -ms-transition: opacity 1.2s ease-in-out;
+    transition: opacity 1.2s ease-in-out;
+    opacity: 0;
+}
+
+body.home #portfolio {
+    opacity: 0;
+}
+body.portfolio #portfolio{
+    opacity: 100;
+}
+
+body.portfolio #home {
+    opacity: 0;
+}
+
+body.home #home{
+    opacity: 100;
+}
+
+
+

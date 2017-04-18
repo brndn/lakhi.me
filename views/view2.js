@@ -200,37 +200,14 @@ $(document).on('ready', function () {
     })
 
 
-
-
-        $('#portfolio gallery').magnificPopup({
-
-            delegate: 'a',
-            type: 'image',
-            closeOnContentClick: true,
-            closeBtnInside: false,
-            fixedContentPos: false,
-            mainClass: 'mfp-with-zoom mfp-img-mobile',
-            image: {
-                verticalFit: true,
-                titleSrc: function(item) {
-                    return item.el.attr('title') + ' &middot; <a class="image-source-link" href="'+item.el.attr('data-source')+'" target="_blank">image source</a>';
-                }
-            },
-            gallery: {
-                enabled: true
-            },
-            zoom: {
-                enabled: false,
-            },
-            callbacks: {
+    function callbacks() {
+        return {
                 open: function () {
                     console.log('Popup open has been initiated');
-                 
-                }, close: function () {
-                    $("#portfolio div.gallery-shell").addClass("hide-shell");
-                    setTimeout(function(){
-
-                    }, 4000)
+                    $("div.main-container").addClass("no-pointers");
+                },
+                close: function () {
+                    $("div.main-container").removeClass("no-pointers");
 
                 },
                 beforeClose: function() {
@@ -241,36 +218,53 @@ $(document).on('ready', function () {
                 //     console.log('Popup removal initiated (after removalDelay timer finished)');
                 // },
                 afterClose: function() {
-                    $("#portfolio div.gallery-shell").removeClass("hide-shell");
+                    $("div.main-container").removeClass("no-pointers");
+                    onWindowResize2();
                     console.log('Popup is completely closed');
                 },
             }
+        }
 
+
+
+        $('#portfolio gallery').magnificPopup({
+
+            delegate: 'a',
+            type: 'image',
+            closeOnContentClick: false,
+            closeBtnInside: false,
+            fixedContentPos: false,
+            mainClass: 'mfp-with-zoom mfp-img-mobile',
+            image: {
+                verticalFit: false,
+                titleSrc: function(item) {
+                    return item.el.attr('title') + ' &middot; <a class="image-source-link" href="'+item.el.attr('data-source')+'" target="_blank">image source</a>';
+                }
+            },
+            gallery: {
+                enabled: true
+            },
+            zoom: {
+                enabled: false,
+            },
+            callbacks: callbacks
         });
 
     $('#portfolio gallery .popup-vimeo').magnificPopup({
-        disableOn: 700,
         type: 'iframe',
-        mainClass: 'mfp-fade',
+        mainClass: 'mfp-with-zoom mfp-img-mobile',
         removalDelay: 160,
-        preloader: false,
-        closeOnContentClick: true,
+        preloader: true,
+        closeOnContentClick: false,
         closeBtnInside: false,
         fixedContentPos: false,
         gallery: {
-            enabled: true
+            enabled: false
         },
         zoom: {
             enabled: false,
         },
-        callbacks: {
-            open: function () {
-                // Will fire when this exact popup is opened
-                // this - is Magnific Popup object
-            }, close: function () {
-                // Will fire when popup is closed
-            }
-        }
+        callbacks: callbacks
     });
 
 });
