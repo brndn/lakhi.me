@@ -26,23 +26,23 @@
 
 </head>
 <body>
-<div id="main-container">
-    <row>
+<!--<div id="main-container">-->
+<div class="down-button home-button">
+    <button  onclick="navigationPages.PORTFOLIO.show()">ENTER</button>
+</div>
+<div class="up-button">
+<button  onclick="navigationPages.HOME.show()" />
+</div>
 <view id="home">
-    <row>
+    <!--<row>-->
+        
     <div id="home-gl"></div>
 
-    <div class="down-button home-button">
-        <button  onclick="navigationPages.PORTFOLIO.show()">ENTER</button>
-    </div>
-    </row>
+    <!--</row>-->
 </view>
 
 <view id="portfolio">
-    <row>
-    <div class="up-button">
-        <button onclick="navigationPages.HOME.show()" />
-    </div>
+    <!--<row>-->
 
     <column>
         <div class="left-nav"></div>
@@ -56,19 +56,19 @@
         <!--<div class="down-button">-->
             <!--<button  onclick="navigationPages.CONTACT.show()" />-->
         <!--</div>-->
-    </row>
+    <!--</row>-->
 </view>
 
-<view class="window-container" id="contact">
-    <div class="up-button">
-        <button onclick="navigationPages.PORTFOLIO.show()" />
-    </div>
-    <div class="center-inner">
-    <section class="contact_form_section">
-    </section>
-    </div>
-</view>
-    </row>
+<!--<view class="window-container" id="contact">-->
+    <!--<div class="up-button">-->
+        <!--<button onclick="navigationPages.PORTFOLIO.show()" />-->
+    <!--</div>-->
+    <!--<div class="center-inner">-->
+    <!--<section class="contact_form_section">-->
+    <!--</section>-->
+    <!--</div>-->
+<!--</view>-->
+ 
 
 <script>
     $(function() {
@@ -145,6 +145,6 @@
 </script>
 <script src="views/view1.js" type="text/javascript" charset="utf-8"></script>
 <script src="views/view2.js" type="text/javascript" charset="utf-8"></script>
-</div>
+<!--</div>-->
 </body>
 </html>

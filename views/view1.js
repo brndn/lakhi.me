@@ -17,7 +17,13 @@ function init() {
 
     container = document.getElementById( 'home-gl' );
 
-    var isFirefox = typeof InstallTrigger !== 'undefined';
+    var isFirefox = /firefox/i.test(navigator.userAgent);
+    if(isFirefox){
+        $(container).addClass('gl-ff');
+    } else {
+        $(container).addClass('gl-reg');
+    }
+
     // useGl = false;
     // return;
     if(isFirefox || (/android|webos|iphone|ipad|ipod|blackberry|iemobile|opera mini/i.test(navigator.userAgent.toLowerCase()))){
@@ -32,6 +38,7 @@ function init() {
         useGl = true;
         
     }
+
 
 
 
