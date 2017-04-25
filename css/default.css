@@ -290,6 +290,10 @@ button::-moz-focus-inner{
     left: 0;
 }
 
+.hidden{
+    display: none;
+}
+
 
 
 /*todo colour everything*/
