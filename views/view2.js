@@ -205,9 +205,13 @@ $(document).on('ready', function () {
                 open: function () {
                     console.log('Popup open has been initiated');
                     $("div.main-container").addClass("no-pointers");
+                    $("#bottom-button").addClass("hidden");
+                    $("#top-button").addClass("hidden");
                 },
                 close: function () {
                     $("div.main-container").removeClass("no-pointers");
+                    $("#bottom-button").removeClass("hidden");
+                    $("#top-button").removeClass("hidden");
 
                 },
                 beforeClose: function() {
@@ -247,7 +251,7 @@ $(document).on('ready', function () {
             zoom: {
                 enabled: false,
             },
-            callbacks: callbacks
+            callbacks: callbacks()
         });
 
     $('#portfolio gallery .popup-vimeo').magnificPopup({
@@ -264,7 +268,7 @@ $(document).on('ready', function () {
         zoom: {
             enabled: false,
         },
-        callbacks: callbacks
+        callbacks: callbacks()
     });
 
 });

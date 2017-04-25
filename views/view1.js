@@ -188,7 +188,7 @@ function onWindowResize() {
 
 }
 
-
+ var animationId;
 function animate() {
 
     if(!useGl){
@@ -196,10 +196,10 @@ function animate() {
 
     }
 
-    requestAnimationFrame(animate);
+    animationId = requestAnimationFrame(animate);
 
 
-
+     // console.log(renderer.info)
 
     //   controls.update();
 
@@ -229,6 +229,8 @@ function animate() {
 
     renderer.render(scene, camera);
 
+   
+
 
 }
 function reInitPage1(){
@@ -252,7 +254,7 @@ function removeParticles(){
     scene.remove(particleSystem);
 
     // animate();
-    cancelAnimationFrame(animate)
+    cancelAnimationFrame(animationId)
 
     // scene.dispose();
     // renderer.dispose();
